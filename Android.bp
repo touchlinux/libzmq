@@ -89,7 +89,6 @@ cc_library_shared {
         "src/decoder_allocators.cpp",
         "src/socket_poller.cpp",
         "src/timers.cpp",
-        "src/config.hpp",
         "src/radio.cpp",
         "src/dish.cpp",
         "src/udp_engine.cpp",
@@ -98,10 +97,10 @@ cc_library_shared {
         "src/gather.cpp",
         "src/ip_resolver.cpp",
         "src/zap_client.cpp",
-        "src/config.hpp",
+        "src/stream_connecter_base.cpp",
+        "src/stream_listener_base.cpp",
+	"src/tweetnacl.c",
     ],
-
-    stl: "none",
 
     local_include_dirs: [ "src/", ],
 
@@ -109,10 +108,17 @@ cc_library_shared {
         "-std=c++14",
         "-Wall",
         "-Werror",
+        "-Wno-non-virtual-dtor",
         "-Wno-unused-parameter",
+        "-fexceptions",
     ],
+
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+ 
     sanitize: {
         never: true,
     },
-    enabled: false,
 }
