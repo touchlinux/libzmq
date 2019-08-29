@@ -102,7 +102,8 @@ cc_library_shared {
 	"src/tweetnacl.c",
     ],
 
-    local_include_dirs: [ "src/", ],
+    local_include_dirs: [ "src" ],
+    export_include_dirs: [ "include" ],
 
     cppflags: [
         "-std=c++14",
