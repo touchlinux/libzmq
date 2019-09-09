@@ -162,7 +162,6 @@ tests/test*.log
 tests/test*.trs
 unittests/unittest*.log
 unittests/unittest*.trs
-src/platform.hpp*
 src/stamp-h1
 local_lat
 local_thr
